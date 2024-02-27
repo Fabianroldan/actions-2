@@ -1,5 +1,5 @@
 name: Preparant per producció
-run-name: ${{ github.actor }} està pujant l'aplicació a PROD 🚀
+run-name: ${{ github.actor }} està pujant l'aplicació a PROD  🚀
 on: [push]
 jobs:
   Pujar-a-produccio-amb-SCP:
@@ -7,12 +7,6 @@ jobs:
     steps:
       - name: Obtenint el codi del respositori
         uses: actions/checkout@v4
-
-      - name: Crear directori web i fitxer si no existeixen
-        run: |
-          mkdir -p ./web
-          echo "Action desplegant a produccio" > ./web/last_deploy.txt
-          date >> ./web/last_deploy.txt
 
       - name: scp a produccio
         run: |
